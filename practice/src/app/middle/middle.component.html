@@ -1,0 +1,12 @@
+<h3 class="title">Books</h3>
+<div>
+    <input type="text" class="form-control" [(ngModel)]="bookName"/>
+</div>
+<div>
+    <p>Book Id: {{bookId}}</p>
+    <p>Book Name: {{bookName}}</p> <!-- Two way binding -->
+    <p>Book Author: {{bookAuthor}}</p>
+</div>
+<div>
+    <button class="btn btn-success" [disabled]="btnToggle" (click)="onToggle()">Toggle</button>
+</div>
