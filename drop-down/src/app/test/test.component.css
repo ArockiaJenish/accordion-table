@@ -1,0 +1,26 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+body{
+	padding-top:50px;
+	background-color:#34495e;
+}
+
+
+
+.hiddenRow {
+    padding: 0 !important;
+}
+
+
+td, th{
+    border: hidden;
+}
+
+.backColor{
+    background-color: #d7ded9;
+}
+
+button{
+    border: hidden;
+}

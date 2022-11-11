@@ -1,0 +1,130 @@
+<!-- <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+        <div class="container shadow min-vh-100 py-2">
+            <div class="collapse-responsive">
+                <table class="table table-striped">
+                    <thead class="backColor">
+                        <tr>
+                            <th scope="col">Pos</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">Matches</th>
+                            <th scope="col">Won</th>
+                            <th scope="col">Lost</th>
+                            <th scope="col">Drawn</th>
+                            <th scope="col">NR</th>
+                            <th scope="col">Points</th>
+                            <th scope="col">PTC</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let v of pointsTable; index as i">
+                        <tr data-bs-toggle="collapse" [attr.data-bs-target]="'#r'+i">
+                            <td>{{v.pos}}</td>
+                            <td>{{v.team}}</td>
+                            <td>{{v.matches}}</td>
+                            <td>{{v.won}}</td>
+                            <td>{{v.lost}}</td>
+                            <td>{{v.drawn}}</td>
+                            <td>{{v.NR}}</td>
+                            <td>{{v.points}}</td>
+                            <td>{{v.pct}}</td>
+                            <td><i class="bi bi-caret-down-fill"></i></td>
+                        </tr>
+                        <tr class="collapse backColor" [id]="'r'+i" data-bs-parent=".table">
+                            <td colspan="10">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Opponent</th>
+                                            <th>Description</th>
+                                            <th>Date</th>
+                                            <th>Results</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let p of v.dropDown">
+                                            <td>{{p.oppo}}</td>
+                                            <td>{{p.description}}</td>
+                                            <td>{{p.date}}</td>
+                                            <td>{{p.result}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <!-- <div class="col-md-3">
+
+        </div> -->
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead class="backColor">
+                    <tr>
+                        <th scope="col">Pos</th>
+                        <th scope="col">Team</th>
+                        <th scope="col">Matches</th>
+                        <th scope="col">Won</th>
+                        <th scope="col">Lost</th>
+                        <th scope="col">Drawn</th>
+                        <th scope="col">NR</th>
+                        <th scope="col">Points</th>
+                        <th scope="col">PTC</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let v of pointsTable; index as i">
+                    <tr data-bs-toggle="collapse">
+                        <td>{{v.pos}}</td>
+                        <td>{{v.team}}</td>
+                        <td>{{v.matches}}</td>
+                        <td>{{v.won}}</td>
+                        <td>{{v.lost}}</td>
+                        <td>{{v.drawn}}</td>
+                        <td>{{v.NR}}</td>
+                        <td>{{v.points}}</td>
+                        <td>{{v.pct}}</td>
+                        <td><button [attr.data-bs-target]="'#r'+i" type="button" data-bs-toggle="collapse"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                <i class="bi bi-caret-down-fill"></i>
+                            </button></td>
+                    </tr>
+                    <tr class="collapse backColor" [id]="'r'+i" data-bs-parent=".table">
+                        <td colspan="10">
+                            <table class="table"
+                                style="transition-timing-function: ease-in-out;transition: 0.1s ease-in-out;">
+                                <thead>
+                                    <tr>
+                                        <th>Opponent</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                        <th>Results</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let p of v.dropDown">
+                                        <td>{{p.oppo}}</td>
+                                        <td>{{p.description}}</td>
+                                        <td>{{p.date}}</td>
+                                        <td>{{p.result}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- <div class="col-md-3">
+
+        </div> -->
+    </div>
+</div>

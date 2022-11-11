@@ -1,0 +1,29 @@
+table {
+    border-collapse: collapse;
+}
+table th {
+   text-align: left;
+   background-color: #3a6070;
+   color: #fff; 
+   padding:4px 30px 4px 8px;
+}
+table td {
+    border:1px solid #e3e3e3;
+    padding:4px
+}
+table tr:th:nth-child(odd) td {
+    background-color: #e7edf0;
+}
+
+/* --------------Sets button text when clicked. Should combine these later with wildcards------------ */
+#subs-table .btn-primary:before {
+    content:'Click for details';
+}
+#subs-table .btn-primary[aria-expanded="true"]:before {
+    content:'Close Details';
+}
+/* Styling of the collapsible row */
+#subs-table td.collapse-row {
+    border-style: none;
+    padding: 0;
+}

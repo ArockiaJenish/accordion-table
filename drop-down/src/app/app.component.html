@@ -1,0 +1,200 @@
+<!-- <div>
+   <app-header></app-header> 
+  <br>
+  <br>
+  <br>
+  <div class="container training-schedule mt-5">
+    <div class="ponit">
+
+      <h3>World Test ChampionShip (2021-2022) - PointTable</h3>
+  </div>
+</div>
+</div> -->
+
+<!-- <div class="container">
+  <div style="border: solid black" class="row">
+    <div class="col">Pos</div>
+    <div class="col">Team</div>
+    <div class="col">Matches</div>
+    <div class="col">Won</div>
+    <div class="col">Lost</div>
+    <div class="col">Drawn</div>
+    <div class="col">NR</div>
+    <div class="col">Points</div>
+    <div class="col">Action</div>
+
+  </div>
+  <div style="border: solid black" class="row" *ngFor="let p of pointsTable;">
+    <div class="col">{{p.pos}}</div>
+    <div class="col">{{p.team}}</div>
+    <div class="col">{{p.won}}</div>
+    <div class="col">{{p.lost}}</div>
+    <div class="col">{{p.drawn}}</div>
+    <div class="col">{{p.NR}}</div>
+    <div class="col">{{p.points}}</div>
+    <div class="col">{{p.pct}}</div>
+    <div class="col" (click)="p.visible=p.visible? false: true">
+      <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel>
+          <ng-template ngbPanelTitle>
+          </ng-template>
+          <ng-template ngbPanelContent>
+            <table> activeIds="ngb-panel-0"
+              <th>SI. No</th>
+              <th>Name</th>
+              <th>Gender</th>
+            </table>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    </div>
+    <ng-container *ngIf="p.visible">
+      <table>
+          <thead>
+            <tr>
+              <th>Pos</th>
+              <th>Team</th>
+              <th>Matches</th>
+              <th>Won</th>
+              <th>Lost</th>
+              <th>Drawn</th>
+              <th>NR</th>
+              <th>Points</th>
+              <th>PCT</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let p of pointsTable">
+              <td>{{p.pos}}</td>
+              <td>{{p.team}}</td>
+              <td>{{p.matches}}</td>
+              <td>{{p.won}}</td>
+              <td>{{p.lost}}</td>
+              <td>{{p.drawn}}</td>
+              <td>{{p.NR}}</td>
+              <td>{{p.points}}</td>
+              <td>{{p.pct}}</td>
+            </tr>
+          </tbody>
+      </table>
+    </ng-container>
+  </div>
+</div> -->
+<router-outlet></router-outlet>
+<!--<ng-container *ngFor="let sub of pointsTable; index as i">
+  <tr>
+      <th scope="row">{{sub.pos}}</th>
+      <td>{{sub.team}}</td>
+      <td>{{sub.matches}}</td>
+      <td>
+          <button class="btn btn-outline-primary btn-block" type="button" data-toggle="collapse" [attr.data-target]="'#collapse-' + i" [attr.aria-expanded]="false" [attr.aria-controls] = "'collapse-' + i">click</button>
+      </td>
+  </tr>
+  <tr>
+      <td colspan="4" class="collapse-row">
+          <div [attr.id]="'collapse-' + i" class="container collapse out">
+              <div class="row">
+                  <div class="col">Min Splash Damage: 25</div> 
+                  <div class="col">Splash Damage: 35</div>
+                  <div class="col">Direct Hit Damage: 60</div>
+                  <div class="col">Ink Consumption: 40%</div>
+              </div>
+          </div>
+      </td>
+  </tr>
+</ng-container> -->
+
+<!-- <tr *ngFor="let item of pointsTable">
+  <td>{{ item.pos }}</td>
+  <td>{{ item.team }}</td>
+  <td>{{ item.matches }}</td>
+  <td>{{ item.won }}</td>
+  <td>{{ item.lost }}</td>
+  <td>{{ item.drawn }}</td>
+  <td>{{ item.NR }}</td>
+  <td>{{ item.points }}</td>
+  <td>{{ item.pct }}</td>
+  <td>
+    <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+      <ngb-panel>
+        <ng-template ngbPanelTitle>
+        </ng-template>
+        <ng-template ngbPanelContent>
+          <table>
+            <tr>
+              <th>Pos</th>
+              <th>Team</th>
+              <th>Matches</th>
+              <th>Won</th>
+              <th>Lost</th>
+              <th>Drwan</th>
+              <th>NR</th>
+              <th>Points</th>
+              <th>PCT</th>
+              <th>Action</th>
+            </tr>
+          </table>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+  </td>
+</tr> -->
+
+<!-- <table class="table table-striped">
+  <thead>
+      <tr>
+          <th scope="col">Queue Id</th>
+          <th scope="col">Application</th>
+          <th scope="col">Type</th>
+          <th scope="col">Start Time</th>
+          <th scope="col">End Time</th>
+          <th scope="col"></th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let record of pointsTable; let i = index">
+      <tr>
+          <td>{{ record.pos }}</td>
+          <td>{{ record.team }}</td>
+          <td>{{ record.matches }}</td>
+          <td>{{ record.won }}</td>
+          <td>{{ record.lost }}</td>
+          <td><button type="button" class="btn btn-dark" (click)="i=!i">View</button></td>
+          <td><button type="button" class="btn btn-danger">Remove</button></td>
+      </tr>
+      <tr *ngIf="!i">
+          <app-expansion [queueId]="true"></app-expansion>
+      </tr>
+  </tbody>
+</table> -->
+
+<!-- <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+  <ngb-panel>
+    <ng-template ngbPanelTitle>
+      <span>&#9733; <b>Fancy</b> title &#9733;</span>
+      <span>&#9733; <b>Fancy2</b> title &#9733;</span> 
+      <td><span>{{ item.pos }}</span></td>
+      <td><span>{{ item.team }}</span></td>
+      <td><span>{{ item.matches }}</span></td>
+      <td><span>{{ item.won }}</span></td>
+      <td><span>{{ item.lost }}</span></td>
+      <td><span>{{ item.drawn }}</span></td>
+      <td><span>{{ item.NR }}</span></td>
+      <td><span>{{ item.points }}</span></td>
+      <td><span>{{ item.pct }}</span></td>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+      moon
+      officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+      3 wolf
+      moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+      Nihil anim
+      keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan
+      excepteur butcher
+      vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
+      haven't
+      heard of them accusamus labore sustainable VHS.
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion> -->
