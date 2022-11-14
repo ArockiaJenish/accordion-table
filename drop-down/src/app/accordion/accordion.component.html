@@ -20,7 +20,7 @@
                 Accordion Item #2
             </button>
         </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        <div id="flush-collapseTwo" class="collapse" aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample">
             <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the
                 <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being
@@ -32,7 +32,7 @@
         <h2 class="accordion-header" id="flush-headingThree">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                Accordion Item #3
+                <!-- Accordion Item #3 -->
             </button>
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
@@ -47,34 +47,68 @@
 </div>
 
 <div class="accordion-item container">
-    <table>
+    <table class="table backColor">
         <thead>
             <tr>
-                <th>checking1</th>
-                <th>checking2</th>
-                <th></th>
+                <th scope="col">Pos</th>
+                <th scope="col">Team</th>
+                <th scope="col">Matches</th>
+                <th scope="col">Won</th>
+                <th scope="col">Lost</th>
+                <th scope="col">Drawn</th>
+                <th scope="col">NR</th>
+                <th scope="col">Points</th>
+                <th scope="col">PTC</th>
+                <th scope="col"></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody *ngFor="let v of pointsTable; index as i">
             <tr>
-                <td>cell1</td>
-                <td>cell2</td>
+                <td>{{v.pos}}</td>
+                <td>{{v.team}}</td>
+                <td>{{v.matches}}</td>
+                <td>{{v.won}}</td>
+                <td>{{v.lost}}</td>
+                <td>{{v.drawn}}</td>
+                <td>{{v.NR}}</td>
+                <td>{{v.points}}</td>
+                <td>{{v.pct}}</td>
                 <td>
                     <p class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#flush-dummy" aria-expanded="false" aria-controls="flush-collapseOne">
-                            <i class="bi bi-caret-down-fill"></i>
+                        <button (click)="arrow(i)" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            [attr.data-bs-target]="'#r'+i" aria-expanded="false"
+                            aria-controls="flush-collapseOne">
+                            <i *ngIf="!v.visible" class="bi bi-caret-down-fill"></i>
+                            <i *ngIf="v.visible" class="bi bi-caret-up-fill"></i>
                         </button>
                     </p>
                 </td>
             </tr>
             <tr>
-                <div id="flush-dummy" class="accordion-collapse collapse" aria-labelledby="flush-headingOne">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the
-                        <code>.accordion-flush</code> class. This is the first item's accordion body.
+                <td colspan="10"> 
+                    <div [id]="'r'+i" class="accordion-collapse collapse" aria-labelledby="flush-headingOne">
+                        <div class="accordion-body">
+                            <table class="table innerTable">
+                                <thead>
+                                    <tr>
+                                        <th>Opponent</th>
+                                        <th>Description</th>
+                                        <th>Date</th>
+                                        <th>Results</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let p of v.dropDown">
+                                        <td>{{p.oppo}}</td>
+                                        <td>{{p.description}}</td>
+                                        <td>{{p.date}}</td>
+                                        <td>{{p.result}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                </td>
             </tr>
         </tbody>
     </table>

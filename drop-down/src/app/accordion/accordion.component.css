@@ -1,9 +1,12 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-/* td, th{
-    border: hidden;
+th, td{
+    border:hidden
+}
+.backColor{
+    background-color: #7aabfa;
 }
 
-.backColor{
-    background-color: #d7ded9;
-} */
+.innerTable{
+    background-color:#c7d7f0;
+}
