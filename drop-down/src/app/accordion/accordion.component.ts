@@ -7,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccordionComponent implements OnInit {
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     console.log(this.pointsTable);
     // this.pointsTable.map(p => {
-  
+
     // })
   }
 
@@ -93,6 +93,50 @@ export class AccordionComponent implements OnInit {
     else
       this.pointsTable[i].visible = true;
   }
-  
+
+  check(event: any) {
+    let reg = new RegExp("^[a-zA-Z0-9\@]+$");
+    var val = String.fromCharCode(event.charCode);
+    //var val2 = event.data;
+    console.log(event.charCode);
+    console.log(reg.test(val) + ' keypress');
+
+    if (!reg.test(val))
+      event.preventDefault();
+  }
+  check2(event: any) {
+    //event.preventDefault();
+    let reg = new RegExp("^[a-zA-Z0-9\@]+$");
+    var val2 = event.data;
+    //let num = val2.charCodeAt(0);
+    //var val = String.fromCharCode(num);
+    //console.log(num);
+    console.log(reg.test(val2) + ' onInput');
+    if (!reg.test(val2)){
+      //this.stopDefault(event);
+      console.log('if block');
+      //event.preventDefault();
+      event.stopPropagation()
+      return false;
+    }
+    else
+      console.log('else block');
+      return true;
+      
+  }
+
+  // stopDefault(event: any){
+  //   event.preventDefault();
+  // }
+
+  checkPaste(event: any) {
+    let reg = new RegExp("^[a-zA-Z0-9\@]+$");
+    console.log(event.clipboardData.getData('text'));
+    let val = event.clipboardData.getData('text');
+    if (!reg.test(val)) {
+      console.log('not allowed');
+      event.preventDefault();
+    } else console.log('allowed');
+  }
 }
 

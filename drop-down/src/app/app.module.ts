@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { AccordionComponent } from './accordion/accordion.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HoverDirective } from "./customDirective/hover.directive"
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    AccordionComponent
+    AccordionComponent,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
