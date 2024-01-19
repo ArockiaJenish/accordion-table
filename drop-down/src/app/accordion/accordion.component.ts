@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-accordion',
@@ -8,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class AccordionComponent implements OnInit {
 
   constructor() { }
+
+  // @Output() newItemEvent = new EventEmitter<any>();
+
+  // send(){
+  //   this.newItemEvent.emit(this.pointsTable);
+  // }
 
   ngOnInit(): void {
     console.log(this.pointsTable);
@@ -98,31 +104,24 @@ export class AccordionComponent implements OnInit {
     let reg = new RegExp("^[a-zA-Z0-9\@]+$");
     var val = String.fromCharCode(event.charCode);
     //var val2 = event.data;
-    console.log(event.charCode);
-    console.log(reg.test(val) + ' keypress');
+    //console.log(event.charCode);
+    //console.log(reg.test(val) + ' keypress');
 
-    if (!reg.test(val))
-      event.preventDefault();
+    // if (!reg.test(val))
+    //   event.preventDefault();
+    console.log("keyPress");
   }
   check2(event: any) {
     //event.preventDefault();
-    let reg = new RegExp("^[a-zA-Z0-9\@]+$");
+    let reg = new RegExp("^[a-zA-Z0-9\@\.]+$");
     var val2 = event.data;
-    //let num = val2.charCodeAt(0);
-    //var val = String.fromCharCode(num);
-    //console.log(num);
-    console.log(reg.test(val2) + ' onInput');
+    var inputData = event.target.value;
+    // console.log(event.target.value);
+    // console.log(reg.test(val2) + ' onInput');
     if (!reg.test(val2)){
-      //this.stopDefault(event);
-      console.log('if block');
-      //event.preventDefault();
-      event.stopPropagation()
-      return false;
+     event.target.value = inputData.substring(0, inputData.length-1);
     }
-    else
-      console.log('else block');
-      return true;
-      
+    console.log("input");
   }
 
   // stopDefault(event: any){
@@ -131,12 +130,21 @@ export class AccordionComponent implements OnInit {
 
   checkPaste(event: any) {
     let reg = new RegExp("^[a-zA-Z0-9\@]+$");
-    console.log(event.clipboardData.getData('text'));
+    //console.log(event.clipboardData.getData('text'));
+    console.log("paste");
     let val = event.clipboardData.getData('text');
     if (!reg.test(val)) {
       console.log('not allowed');
       event.preventDefault();
     } else console.log('allowed');
+  }
+
+  keyDown(){
+    console.log("keyDown");
+  }
+
+  keyUp(){
+    console.log("keyUp");
   }
 }
 

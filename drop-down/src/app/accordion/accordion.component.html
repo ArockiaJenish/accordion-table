@@ -30,7 +30,7 @@
     </div>
     <div appHover>
         <label for="name">Enter Name:</label>
-        <input type="text" (input)="check2($event)" (keypress)="check($event)" (paste)="checkPaste($event)">
+        <input type="text" (keydown)="keyDown()" (keyup)="keyUp()" (input)="check2($event)" (keypress)="check($event)" (paste)="checkPaste($event)">
     </div>
     <div class="accordion-item" appHover>
         <h2 class="accordion-header" id="flush-headingThree">
@@ -78,14 +78,14 @@
                 <td>{{v.points}}</td>
                 <td>{{v.pct}}</td>
                 <td>
-                    <p class="accordion-header" id="flush-headingOne">
+                    <h2 class="accordion-header" id="flush-headingOne">
                         <button (click)="arrow(i)" class="accordion-button collapsed" type="button"
                             data-bs-toggle="collapse" [attr.data-bs-target]="'#r'+i" aria-expanded="false"
                             aria-controls="flush-collapseOne">
                             <i *ngIf="!v.visible" class="bi bi-caret-down-fill"></i>
                             <i *ngIf="v.visible" class="bi bi-caret-up-fill"></i>
                         </button>
-                    </p>
+                    </h2>
                 </td>
             </tr>
             <tr>
@@ -117,3 +117,4 @@
         </tbody>
     </table>
 </div>
+<!-- <button routerLink="/test" (click)="send()">Click</button> -->
